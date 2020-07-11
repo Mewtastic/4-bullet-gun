@@ -16,7 +16,7 @@ func get_input():
 
 func shoot():
 	var b = Bullet.instance()
-	b.start($Muzzle.global_position, rotation, 3)
+	b.start($Muzzle.global_position, rotation, 0)
 	get_parent().add_child(b)
 	
 

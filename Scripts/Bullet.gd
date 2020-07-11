@@ -38,6 +38,7 @@ func _on_Area2D_body_entered(body):
 	velocity = Vector2()
 	visible = false
 	if bullet_type == PURPLE_BULLET:
+		connect("teleport", get_parent().get_child(0), "_on_Bullet_teleport")
 		var pos = global_position
 		emit_signal("teleport", pos)
 	queue_free()
