@@ -10,7 +10,7 @@ var speed = 1200
 var velocity = Vector2()
 var bullet_type = null
 
-func start(pos, dir, type):
+func start(pos, dir, type, enemy=false):
 	rotation = dir
 	position = pos
 	bullet_type = type
