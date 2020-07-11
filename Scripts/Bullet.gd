@@ -1,12 +1,12 @@
 extends KinematicBody2D
 
-const PURPLE_BULLET = 0 # Teleport bullet
+const PURPLE_BULLET = 0 # Teleport bullet ~ Finished
 const BLUE_BULLET = 1 # Obstacle trigger bullet. EX. Will explode barrels
 const RED_BULLET = 2 # Shoots a bullet and damage enemies
 
 signal teleport
 
-var speed = 750
+var speed = 1200
 var velocity = Vector2()
 var bullet_type = null
 
@@ -15,18 +15,14 @@ func start(pos, dir, type):
 	position = pos
 	bullet_type = type
 	velocity = Vector2(speed, 0).rotated(rotation)
+	if bullet_type == BLUE_BULLET:
+		$Area2D.set_collision_layer(34)
+		$Sprite.modulate = Color(0, 0, 255)
+	elif bullet_type == PURPLE_BULLET:
+		$Sprite.modulate = Color(255, 0, 255)
 
 func _physics_process(delta):
 	velocity = move_and_slide(velocity)
-
-
-func _on_Area2D_area_shape_entered(area_id, area, area_shape, self_shape):
-	velocity = Vector2()
-	visible = false
-	if bullet_type == PURPLE_BULLET:
-		var pos = global_position
-		emit_signal("teleport", pos)
-	queue_free()
 
 
 func _on_VisibilityNotifier2D_screen_exited():
