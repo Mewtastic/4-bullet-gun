@@ -1,21 +1,13 @@
 extends Node2D
 
+export (NodePath) var TargetPath
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+onready var TargetNode = get_node(TargetPath)
+
 var Bullet = preload("res://Assets/Instances/Bullet.tscn")
-var fire_rate = 30  # Number of frames between shots
+var fire_rate = 80  # Number of frames between shots
 var fire_timer = fire_rate
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-#func get_input():
-#	look_at($Player)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	fire_timer += 1
 	fire_timer = min(fire_rate, fire_timer)
@@ -28,4 +20,4 @@ func _process(delta):
 			get_parent().add_child(b)
 			fire_timer = 0
 
-	global_position = get_parent().get_node("Enemy").global_position
+	self.global_position = TargetNode.global_position

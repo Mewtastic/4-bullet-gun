@@ -14,3 +14,13 @@ offset = Vector2( 320, 0 )
 
 [node name="Muzzle" type="Position2D" parent="."]
 position = Vector2( 36, 0 )
+
+[node name="ShotDelay" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="LoadDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+[connection signal="timeout" from="ShotDelay" to="." method="_on_ShotDelay_timeout"]
+[connection signal="timeout" from="LoadDelay" to="." method="_on_LoadDelay_timeout"]

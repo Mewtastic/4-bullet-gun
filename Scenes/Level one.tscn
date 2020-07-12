@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Instances/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Instances/Gun.tscn" type="PackedScene" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Assets/Instances/World.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Assets/Instances/Enemy.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Assets/Instances/Enemy gun.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Assets/Instances/Drone.tscn" type="PackedScene" id=7]
 
 [node name="Level one" type="Node2D"]
 
@@ -25,3 +26,12 @@ tile_data = PoolIntArray( -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0
 position = Vector2( 718.955, 122.053 )
 
 [node name="Enemy gun" parent="." instance=ExtResource( 6 )]
+position = Vector2( 698.24, 134.538 )
+TargetPath = NodePath("../Enemy")
+
+[node name="Drone" parent="." instance=ExtResource( 7 )]
+position = Vector2( 400.439, 183.117 )
+
+[node name="Drone gun" parent="." instance=ExtResource( 6 )]
+position = Vector2( 401.357, 193.561 )
+TargetPath = NodePath("../Drone")
