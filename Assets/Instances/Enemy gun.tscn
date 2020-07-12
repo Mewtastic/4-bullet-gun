@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/enemy_gun.gd" type="Script" id=1]
+[ext_resource path="res://Assets/Sprites/enemy_gun.png" type="Texture" id=2]
+
+[node name="Enemy gun" type="Node2D"]
+position = Vector2( 334, 23 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.145018, 0.145018 )
+texture = ExtResource( 2 )
+offset = Vector2( 375, 0 )
+flip_h = true
+
+[node name="Position2D" type="Position2D" parent="."]
+position = Vector2( 100, -2 )
+z_index = 1

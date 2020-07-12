@@ -1,14 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Instances/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/Instances/Gun.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Assets/Instances/Barrel.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Assets/Instances/World.tscn" type="PackedScene" id=4]
-[ext_resource path="res://Assets/Sprites/icon.png" type="Texture" id=5]
-[ext_resource path="res://Assets/Sprites/gun.png" type="Texture" id=6]
-[ext_resource path="res://Scripts/enemy_gun.gd" type="Script" id=7]
-
-[sub_resource type="CircleShape2D" id=1]
+[ext_resource path="res://Assets/Instances/Enemy.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Assets/Instances/Enemy gun.tscn" type="PackedScene" id=6]
 
 [node name="Level one" type="Node2D"]
 
@@ -24,28 +21,7 @@ position = Vector2( 603.018, 553.225 )
 collision_bounce = 0.0
 tile_data = PoolIntArray( -65540, 0, 0, -65539, 0, 0, -65538, 0, 0, -65537, 0, 0, -131072, 0, 0, -131071, 0, 0, -131070, 0, 0, -131069, 0, 0, -131068, 0, 0, -131067, 0, 0, -131066, 0, 0, -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -131062, 0, 0, -131061, 0, 0, -131060, 0, 0, -131059, 0, 0, -131058, 0, 0, -131057, 0, 0, -131056, 0, 0, -131055, 0, 0, -131054, 0, 0, -131053, 0, 0, -131052, 0, 0, -131051, 0, 0, -131050, 0, 0, -131049, 0, 0, -131048, 0, 0, -131047, 0, 0, -131046, 0, 0, -4, 0, 0, -65510, 0, 0, 65532, 0, 0, 26, 0, 0, 131068, 0, 0, 65562, 0, 0, 196604, 0, 0, 131098, 0, 0, 262140, 0, 0, 196634, 0, 0, 327676, 0, 0, 262170, 0, 0, 393212, 0, 0, 327706, 0, 0, 458748, 0, 0, 393242, 0, 0, 524284, 0, 0, 458778, 0, 0, 589820, 0, 0, 524314, 0, 0, 655356, 0, 0, 589850, 0, 0, 720892, 0, 0, 655386, 0, 0, 786428, 0, 0, 720922, 0, 0, 851964, 0, 0, 786458, 0, 0, 917500, 0, 0, 851994, 0, 0, 983036, 0, 0, 917530, 0, 0, 1048572, 0, 0, 983066, 0, 0, 1114108, 0, 0, 1048602, 0, 0, 1179644, 0, 0, 1114138, 0, 0, 1245180, 0, 0, 1245181, 0, 0, 1245182, 0, 0, 1245183, 0, 0, 1179648, 0, 0, 1179649, 0, 0, 1179650, 0, 0, 1179651, 0, 0, 1179652, 0, 0, 1179653, 0, 0, 1179654, 0, 0, 1179655, 0, 0, 1179656, 0, 0, 1179657, 0, 0, 1179658, 0, 0, 1179659, 0, 0, 1179660, 0, 0, 1179661, 0, 0, 1179662, 0, 0, 1179663, 0, 0, 1179664, 0, 0, 1179665, 0, 0, 1179666, 0, 0, 1179667, 0, 0, 1179668, 0, 0, 1179669, 0, 0, 1179670, 0, 0, 1179671, 0, 0, 1179672, 0, 0, 1179673, 0, 0, 1179674, 0, 0 )
 
-[node name="Enemy" type="RigidBody2D" parent="."]
-position = Vector2( 192, 8 )
-collision_layer = 8
-collision_mask = 5
-__meta__ = {
-"_edit_group_": true
-}
+[node name="Enemy" parent="." instance=ExtResource( 5 )]
+position = Vector2( 718.955, 122.053 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Enemy"]
-shape = SubResource( 1 )
-
-[node name="Sprite" type="Sprite" parent="Enemy"]
-texture = ExtResource( 5 )
-
-[node name="Enemy gun" type="Node2D" parent="."]
-position = Vector2( 334, 23 )
-script = ExtResource( 7 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Enemy gun"]
-scale = Vector2( 0.145018, 0.145018 )
-texture = ExtResource( 6 )
-offset = Vector2( 320, 0 )
+[node name="Enemy gun" parent="." instance=ExtResource( 6 )]

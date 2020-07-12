@@ -16,7 +16,6 @@ _global_script_class_icons={
 [application]
 
 config/name="4 -bullet-gun"
-run/main_scene="res://Scenes/Level one.tscn"
 boot_splash/image="res://Assets/Sprites/SplashScreen.png"
 boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://Assets/Sprites/icon.png"

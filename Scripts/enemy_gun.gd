@@ -24,7 +24,7 @@ func _process(delta):
 		look_at(player.global_position)
 		if(fire_timer == fire_rate):
 			var b = Bullet.instance()
-			b.start(global_position, rotation, int(2), true)
+			b.start($Position2D.global_position, rotation, int(2), true)
 			get_parent().add_child(b)
 			fire_timer = 0
 
