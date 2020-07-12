@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Barrel_noise.ogg-49e342cb244f87c52d728034144a1871.oggstr"
+
+[deps]
+
+source_file="res://Assets/Music/Barrel_noise.ogg"
+dest_files=[ "res://.import/Barrel_noise.ogg-49e342cb244f87c52d728034144a1871.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

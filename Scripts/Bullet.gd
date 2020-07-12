@@ -16,10 +16,15 @@ func start(pos, dir, type, enemy=false):
 	bullet_type = type
 	velocity = Vector2(speed, 0).rotated(rotation)
 	if bullet_type == BLUE_BULLET:
-		$Area2D.set_collision_layer(34)
+		$Area2D.set_collision_layer(32)
 		$Sprite.modulate = Color(0, 0, 255)
 	elif bullet_type == PURPLE_BULLET:
 		$Sprite.modulate = Color(255, 0, 255)
+	else:
+		$Area2D.set_collision_layer(64)
+		if enemy:
+			$Area2D.set_collision_layer(128)
+			$Area2D.set_collision_mask(29)
 
 func _physics_process(delta):
 	velocity = move_and_slide(velocity)

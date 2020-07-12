@@ -21,3 +21,55 @@ func _process(delta):
 			fire_timer = 0
 
 	self.global_position = TargetNode.global_position
+
+
+func _on_Enemy_dead():
+	queue_free()
+
+
+func _on_Drone_dead():
+	queue_free()
+
+
+func _on_Enemy2_dead():
+	queue_free()
+
+
+func _on_Enemy3_dead():
+	queue_free()
+
+
+func _on_Enemy4_dead():
+	queue_free()
+
+
+func _on_Enemy5_dead():
+	queue_free()
+
+
+func _on_Enemy6_dead():
+	queue_free()
+
+
+func _on_Drone2_dead():
+	queue_free()
+
+
+func _on_Drone3_dead():
+	queue_free()
+
+
+func _on_Drone4_dead():
+	queue_free()
+
+
+func _on_Drone5_dead():
+	queue_free()
+
+
+func _on_Drone6_dead():
+	queue_free()
+
+
+func _on_Drone7_dead():
+	queue_free()

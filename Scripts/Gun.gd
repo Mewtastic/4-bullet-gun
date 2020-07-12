@@ -21,6 +21,7 @@ func get_input():
 
 func shoot():
 	if loaded:
+		$AudioStreamPlayer2D.play()
 		var b = Bullet.instance()
 		b.start($Muzzle.global_position, rotation, int(barrel0))
 		get_parent().add_child(b)

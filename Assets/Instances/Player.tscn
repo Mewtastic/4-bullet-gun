@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assets/Sprites/Sphere.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Instances/GUI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 30.8397
@@ -24,3 +25,15 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2( 0, -150 )
 current = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_mask = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="GUI" parent="CanvasLayer" instance=ExtResource( 3 )]
+[connection signal="update_health" from="." to="CanvasLayer/GUI" method="_on_Player_update_health"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
